@@ -5,6 +5,7 @@
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-analytics.js";
+  import { getDatabase } from "firebase/database";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -31,7 +32,9 @@
           //     <input type = 'button' id = 'button2' value = 'button2' onclick = 'btn2();'>
           //     <input type = 'text' id = 'text1' >
           //     <input type = 'text' id = 'text2' >
-const database = firebase.database();
+// Create a new post reference with an auto-generated id
+const database = getDatabase();   
+// const database = firebase.database();
 const room = "dataList";
 database.ref(room).push({
     dataText: "de-ta"
